@@ -1,0 +1,33 @@
+.container {
+    width: 100%;
+    min-height: 15rem;
+    padding-top: 3.75rem;
+
+    .inner_container {
+        margin: auto;
+        max-width: 1440px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 4rem;
+
+        & div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 290px;
+            text-align: center;
+        }
+
+        strong {
+            margin: 5px;
+        }
+
+        @media only screen and (max-width: 480px) {
+            padding: 0 2rem;
+            flex-direction: column;
+            padding-bottom: 3.75rem;
+            align-items: center;
+        }
+    }
+}

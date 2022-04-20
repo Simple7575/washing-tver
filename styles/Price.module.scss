@@ -1,0 +1,122 @@
+.container {
+    width: 100%;
+
+    .inner_container {
+        max-width: 1440px;
+        margin: 0 auto;
+        height: 100%;
+        background-image: url("../public/second-bc.png");
+
+        .nav_wrapper {
+            background-color: #6c91af31;
+            display: flex;
+            padding: 1rem 4rem;
+            // padding-top: 2rem;
+            // padding-left: 4rem;
+            // padding-right: 4rem;
+
+            .nav_container {
+                font-size: 0.7rem;
+                color: white;
+                position: relative;
+                width: calc(1440px - 500px);
+
+                ul {
+                    display: flex;
+                }
+
+                li {
+                    margin-right: 2rem;
+                    list-style: none;
+                }
+            }
+
+            .contacts {
+                margin-left: auto;
+                min-width: max-content;
+                display: flex;
+
+                a {
+                    margin-left: 5px;
+                    display: inline-flex;
+                    align-items: center;
+                    color: white;
+
+                    span {
+                        margin-left: 3px;
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+
+        .attention {
+            padding-top: 2rem;
+            padding-left: 4rem;
+            padding-right: 4rem;
+
+            p {
+                color: red;
+                max-width: 500px;
+                font-size: 0.7rem;
+            }
+        }
+
+        .price_content {
+            padding: 2rem 4rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            row-gap: 2rem;
+
+            @media screen and (max-width: 1340px) {
+                grid-template-columns: repeat(3, 1fr);
+                place-items: center;
+                padding: 2rem 2rem;
+            }
+
+            @media screen and (max-width: 1140px) {
+                padding: 2rem 2rem;
+            }
+
+            @media screen and (max-width: 996px) {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 2rem 2rem;
+            }
+
+            @media screen and (max-width: 680px) {
+                grid-template-columns: repeat(1, 1fr);
+                padding: 2rem 1rem;
+                row-gap: 1rem;
+            }
+
+            .card_container {
+                width: 300px;
+                height: 200px;
+                padding: 20px 20px;
+                background: #ffffff;
+                border-radius: 20px;
+                transition: transform 100ms linear;
+
+                &:hover {
+                    transform: scale(1.03);
+                    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+                }
+
+                div {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                & > p {
+                    margin-top: 5px;
+                }
+
+                p {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}

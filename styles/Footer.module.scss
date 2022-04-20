@@ -1,0 +1,38 @@
+@import "./imports/vars.scss";
+
+.container {
+    width: 100%;
+
+    .inner_container {
+        max-width: 1440px;
+        height: 80px;
+        margin: 0 auto;
+        padding: 0 4rem;
+        position: relative;
+        background-color: $primaryC;
+        display: flex;
+        align-items: center;
+        color: white;
+
+        .contacts {
+            margin-left: auto;
+            display: flex;
+
+            span {
+                margin-left: 5px;
+            }
+
+            a {
+                margin-left: 5px;
+                display: inline-flex;
+                align-items: center;
+                color: white;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            padding: 0 2rem;
+        }
+    }
+}

@@ -1,0 +1,291 @@
+@import "./imports/imports.scss";
+@import "./imports/vars.scss";
+
+.container {
+    width: 100%;
+    height: 624px;
+
+    .inner_container {
+        background-color: $primaryC;
+        margin: 0 auto;
+        max-width: 1440px;
+        height: 100%;
+        display: flex;
+
+        .content {
+            color: white;
+            padding-top: 2rem;
+            padding-left: 4rem;
+            position: relative;
+            width: calc(1440px - 500px);
+
+            .contacts {
+                position: absolute;
+                font-size: 0.7rem;
+                right: 10px;
+                top: 2rem;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                button {
+                    cursor: pointer;
+                    background-color: transparent;
+                    border: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    color: white;
+                    font-size: 0.71rem;
+
+                    span {
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .header {
+                margin-top: 8rem;
+                max-width: 600px;
+
+                h1 {
+                    font-size: 2.3rem;
+                }
+
+                h3 {
+                    font-size: 1.3rem;
+                    font-weight: 400;
+                    margin-top: 3rem;
+                    max-width: 450px;
+                }
+
+                button {
+                    cursor: pointer;
+                    margin-top: 5rem;
+                    border: none;
+                    width: 230.04px;
+                    height: 54.34px;
+                    background: #fedc2b;
+                    border-radius: 18.1132px;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 1140px) {
+            .nav_container {
+                position: relative;
+
+                nav {
+                    position: absolute;
+                    background-color: #fff;
+                    width: max-content;
+                    padding: 10px 15px 25px 15px;
+                    transform-origin: top;
+                    transform: scale(1, 0);
+                    opacity: 0;
+                    transition: transform 100ms linear, opacity 200ms linear;
+
+                    &.open {
+                        transform: scale(1, 1);
+                        opacity: 1;
+                    }
+
+                    ul {
+                        display: inline-block;
+                        color: black;
+
+                        li {
+                            margin-top: 15px;
+                            max-width: 9ch;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+
+            .hamburger {
+                height: 25px;
+                width: 25px;
+                display: inline-block;
+                cursor: pointer;
+                transition: transform 150ms linear;
+
+                &.appear {
+                    transform: rotate(180deg);
+                }
+            }
+
+            .contacts {
+                z-index: 101;
+                transform: translate(110%, 0);
+                top: 5rem;
+                display: flex;
+                flex-direction: row-reverse;
+
+                a,
+                button {
+                    margin-left: 5px;
+                }
+
+                a {
+                    span {
+                        margin-left: 3px;
+                    }
+                }
+
+                & a:nth-child(2) {
+                    display: none;
+                }
+
+                button {
+                    span {
+                        display: none !important;
+                    }
+                }
+            }
+
+            .header {
+                margin-top: 3rem !important;
+            }
+
+            .img {
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    z-index: 100;
+                    background-color: rgba(0, 0, 0, 0.432);
+                }
+
+                img {
+                    object-position: 55%;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 740px) {
+            .contacts {
+                z-index: 101;
+                transform: translate(0, 0);
+                top: 5rem;
+                display: flex;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            background-image: url("../public/washingMachine.jpg");
+            background-size: cover;
+            background-position: 55%;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.527);
+            background-blend-mode: color;
+
+            .nav_container {
+                position: relative;
+
+                nav {
+                    position: absolute;
+                    background-color: #fff;
+                    width: max-content;
+                    padding: 15px;
+                    transform-origin: top;
+                    transform: scale(1, 0);
+                    opacity: 0;
+                    transition: transform 100ms linear, opacity 200ms linear;
+
+                    &.open {
+                        transform: scale(1, 1);
+                        opacity: 1;
+                    }
+
+                    ul {
+                        display: inline-block;
+                        color: black;
+
+                        li {
+                            position: relative;
+                            max-width: unset;
+                            width: 100%;
+                            margin-top: 1.5rem;
+                            margin-bottom: 1.5rem;
+                            font-size: 1rem;
+
+                            &::before {
+                                content: "";
+                                border-radius: 500px;
+                                width: 20%;
+                                height: 3px;
+                                background-color: rgba(92, 92, 92, 0.404);
+                                position: absolute;
+                                top: 150%;
+                                left: 50%;
+                                transform: translate(-50%, 0%);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content {
+                color: white;
+                padding-top: 2rem;
+                padding-left: 2rem;
+                padding-right: 1rem;
+            }
+
+            .contacts {
+                transform: translate(-1rem, 0);
+            }
+
+            .img {
+                display: none;
+            }
+        }
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .nav_container {
+        font-size: 0.7rem;
+        transform-origin: top;
+
+        ul {
+            // max-width: ;
+            display: flex;
+            // justify-content: space-between;
+        }
+
+        li {
+            margin-right: 2rem;
+            list-style: none;
+        }
+    }
+}
+
+.img {
+    max-width: 500px;
+    height: 100%;
+
+    img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: right;
+    }
+}
