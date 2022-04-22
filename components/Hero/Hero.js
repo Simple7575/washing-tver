@@ -14,17 +14,7 @@ import { useContext } from "react";
 export default function Hero() {
     const [navState, setNavState] = useState(false);
 
-    const whatsAppUrl = "https://wa.me/+79510873070";
-    const telegramUrl = "https://telegram.me/elenakonor1972";
-
-    // Use international telephone number format without + but with %2B.
-    const viberUrl = "viber://contact?number=%2B79510873070";
-
     const { setPopupState } = useContext(ToglePopup);
-
-    const goTo = (url) => () => {
-        window.open(url, "_blank");
-    };
 
     return (
         <div className={styles.container}>
@@ -62,7 +52,7 @@ export default function Hero() {
                         </button>
                     </div>
                     <div className={styles.header}>
-                        <h1>Ремонт стиральных машин на дому в Нелидово</h1>
+                        <h1>Ремонт стиральных машин на дому в Твери</h1>
                         <h3>
                             Работаем также в Белом, Западной Двине, Оленино и
                             ближайших деревнях. Продажа б/у машин.

@@ -1,6 +1,4 @@
-import PhoneSVG from "./Contacts/svg/PhoneSVG";
-import TelegramSVG from "./Contacts/svg/TelegramSVG.js";
-import WhatsappSVG from "./Contacts/svg/WhatsappSVG.js";
+import { ReCAPTCHA } from "react-google-recaptcha";
 import CloseSVG from "./Contacts/svg/CloseSVG.js";
 
 import { ToglePopup } from "../pages/_app.js";
@@ -22,6 +20,17 @@ const validationSchema = Yup.object({
 export default function Popup() {
     const { popupState, setPopupState } = useContext(ToglePopup);
 
+    const encode = (data) => {
+        return Object.keys(data)
+            .map(
+                (key) =>
+                    encodeURIComponent(key) +
+                    "=" +
+                    encodeURIComponent(data[key])
+            )
+            .join("&");
+    };
+
     const formik = useFormik({
         initialValues: {
             firstName: "",
@@ -30,9 +39,18 @@ export default function Popup() {
             mail: "",
             "user-message": "",
         },
-        onSubmit: (values) => {
-            console.log(values);
-            console.log(formik.touched);
+        onSubmit: (values, onSubmitProps) => {
+            fetch("/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: encode({ "form-name": "Message", ...values }),
+            })
+                .then(() => {
+                    onSubmitProps.resetForm();
+                })
+                .catch((error) => alert(error));
         },
         validationSchema,
     });
@@ -140,7 +158,7 @@ export default function Popup() {
                             <textarea
                                 name="user-message"
                                 id="textarea"
-                                value={formik["user-message"]}
+                                value={formik.values["user-message"]}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                             ></textarea>
@@ -148,7 +166,8 @@ export default function Popup() {
                         <button
                             type="submit"
                             disabled={
-                                Object.keys(formik.errors).length > 0
+                                Object.keys(formik.errors).length > 0 ||
+                                !formik.values.firstName
                                     ? true
                                     : false
                             }

@@ -1,12 +1,22 @@
 import styles from "../styles/MobileButtons.module.scss";
 
 export default function MobileButtons() {
+    const whatsAppUrl = "https://wa.me/+79510873070";
+    const telegramUrl = "https://telegram.me/elenakonor1972";
+
+    // Use international telephone number format without + but with %2B.
+    const viberUrl = "viber://contact?number=%2B79632193536";
+
+    const goTo = (url) => () => {
+        window.open(url, "_blank");
+    };
+
     return (
         <div className={styles.container}>
             <div className={styles.inner__container}>
-                <button
+                <a
+                    href="tel:+79520669090"
                     className={`${styles.button} ${styles.left}`}
-                    type="button"
                 >
                     <svg
                         width="30"
@@ -23,10 +33,11 @@ export default function MobileButtons() {
                         />
                     </svg>
                     Позвонить
-                </button>
+                </a>
                 <button
                     className={`${styles.button} ${styles.right}`}
                     type="button"
+                    onClick={goTo(viberUrl)}
                 >
                     Viber
                     <svg

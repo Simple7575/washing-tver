@@ -16,7 +16,6 @@ function MyApp({ Component, pageProps }) {
         const widthObserver = new ResizeObserver((entries) => {
             if (entries[0].contentRect.width <= 480) {
                 setServiceClassname("mobile");
-                console.log(entries[0].contentRect.width);
             } else if (
                 entries[0].contentRect.width >= 481 &&
                 entries[0].contentRect.width <= 1310
@@ -36,6 +35,7 @@ function MyApp({ Component, pageProps }) {
                 value={{ serviceClassname, setServiceClassname }}
             >
                 <Head>
+                    <meta name="robots" content="none" />
                     <title>Ремонт стиральных машин</title>
                     <meta
                         name="viewport"
@@ -45,11 +45,19 @@ function MyApp({ Component, pageProps }) {
                         name="description"
                         content="Ремонт стиральных машин"
                     />
-                    <link rel="icon" href="/favicon-16x16.png" />
-                    <link rel="icon" href="/favicon-32x32.png" />
+                    <link rel="icon" href="/favicon.svg" />
+                    <meta
+                        name="description"
+                        content="Ремонт стиральных машин на дому в Твери."
+                    />
+                    <meta
+                        name="keywords"
+                        content="Установка и подключение, Покупка б/у машины, Замена ТЭНа, Ремонт модуля управления, Замена замка дверцы, Замена насоса, Замена подшипников"
+                    />
+                    <meta property="og:image" content="/thumbnail.jpg" />
                 </Head>
                 <Component {...pageProps} />
-                <MobileButtons ref={reference} />
+                <MobileButtons />
                 <Popup />
             </ServicesContext.Provider>
         </ToglePopup.Provider>

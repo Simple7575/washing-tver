@@ -9,22 +9,24 @@ import { useContext, useEffect, useState } from "react";
 export default function Services() {
     const { serviceClassname } = useContext(ServicesContext);
     const [currentCard, setCurrentCard] = useState(0);
-    let count = 1;
+    let translateSize = 0;
 
     const nextCard = (e) => {
         const query = window.matchMedia("(min-width: 480px)");
         if (!query.matches) {
             setCurrentCard(currentCard < 4 ? currentCard + 1 : 0);
         } else {
-            const cards = window.document.querySelectorAll("#card_container");
-            cards.forEach((card) => {
-                card.setAttribute(
-                    "style",
-                    `transform: translateX(-${560 * count}px)`
-                );
-            });
-            count = count > 1 ? 0 : count + 1;
-            console.log(count);
+            if (translateSize > -1120) {
+                const cards =
+                    window.document.querySelectorAll("#card_container");
+                cards.forEach((card) => {
+                    card.setAttribute(
+                        "style",
+                        `transform: translateX(${translateSize - 560}px)`
+                    );
+                });
+                translateSize -= 560;
+            }
         }
     };
 
@@ -33,15 +35,17 @@ export default function Services() {
         if (!query.matches) {
             setCurrentCard(currentCard > 0 ? currentCard - 1 : currentCard);
         } else {
-            const cards = window.document.querySelectorAll("#card_container");
-            cards.forEach((card) => {
-                card.setAttribute(
-                    "style",
-                    `transform: translateX(${560 * count}px)`
-                );
-            });
-            count = count === 1 ? count : count - 1;
-            console.log(count);
+            if (translateSize < 0) {
+                const cards =
+                    window.document.querySelectorAll("#card_container");
+                cards.forEach((card) => {
+                    card.setAttribute(
+                        "style",
+                        `transform: translateX(${translateSize + 560}px)`
+                    );
+                });
+                translateSize += 560;
+            }
         }
     };
 

@@ -21,12 +21,12 @@ export default function price() {
                         </nav>
                     </div>
                     <div className={styles.contacts}>
-                        <a href="">
+                        <a href="tel:+79520669090">
                             <ViberSVG />
                         </a>
-                        <a href="">
+                        <a href="tel:+79520669090">
                             <PhoneSVG />
-                            <span>+7 (904) 002 09 14</span>
+                            <span>+7 (952) 066 90 90</span>
                         </a>
                     </div>
                 </div>

@@ -74,11 +74,9 @@
                 width: 540px;
                 overflow: hidden;
                 column-gap: 80px;
-                background-color: blue;
 
                 .card_container {
                     transition: all 300ms linear;
-                    // transform: translateX(-540px);
 
                     &.show {
                         opacity: 1;
