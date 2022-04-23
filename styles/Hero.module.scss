@@ -56,10 +56,14 @@
                 }
 
                 h3 {
-                    font-size: 1.3rem;
+                    font-size: 1.2rem;
                     font-weight: 400;
-                    margin-top: 3rem;
+                    margin-top: 2rem;
                     max-width: 450px;
+
+                    @media screen and (max-width: 570px) {
+                        margin-top: 1rem;
+                    }
                 }
 
                 button {
@@ -70,6 +74,18 @@
                     height: 54.34px;
                     background: #fedc2b;
                     border-radius: 18.1132px;
+
+                    @media screen and (max-width: 740px) {
+                        margin-top: 2rem;
+                    }
+
+                    @media screen and (max-width: 570px) {
+                        margin-top: 1rem;
+                    }
+
+                    @media screen and (max-width: 480px) {
+                        margin-top: 5rem;
+                    }
                 }
             }
         }

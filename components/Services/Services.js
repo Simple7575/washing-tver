@@ -49,8 +49,6 @@ export default function Services() {
         }
     };
 
-    useEffect(() => {}, []);
-
     return (
         <div id="services" className={styles.container}>
             <div className={styles.inner_container}>
