@@ -13,8 +13,8 @@ export default function Contacts() {
                             </a>
                         </li>
                         <li>
-                            <a href="tel:+79520669090">
-                                Доп. т.: +7 910 695 15 12
+                            <a href="tel:+79206951512">
+                                Доп. т.: +7 920 695 15 12
                             </a>
                         </li>
                     </ul>
@@ -24,8 +24,8 @@ export default function Contacts() {
                         Без выходных с 08:00 до 21:00 по предварительной записи
                     </p>
                     <p>
-                        <strong>Обслуживаем в Тверской области:</strong> <br />
-                        Твер, Выезд в пригород.
+                        <strong>Обслуживаем:</strong> <br />
+                        Твер. Выезд в пригород.
                     </p>
                 </div>
                 <div className={styles.map_container}>

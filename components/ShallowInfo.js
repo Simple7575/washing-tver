@@ -18,7 +18,7 @@ export default function ShallowInfo() {
                 <div>
                     <img src="./secondSVG/success.svg" alt="svg" />
                     <strong> Гарантия</strong>
-                    Мы выдаем гарантийный талон сроком действия до полугода.
+                    Мы выдаем гарантийный талон сроком действия до года.
                 </div>
             </div>
         </div>

@@ -35,7 +35,10 @@ function MyApp({ Component, pageProps }) {
                 value={{ serviceClassname, setServiceClassname }}
             >
                 <Head>
-                    <meta name="robots" content="none" />
+                    <meta
+                        name="yandex-verification"
+                        content="7bcec33db7f73537"
+                    />
                     <title>Ремонт стиральных машин</title>
                     <meta
                         name="viewport"

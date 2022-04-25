@@ -13,7 +13,7 @@ export default function Comments() {
 
     const nextCard = (e) => {
         const query = window.matchMedia("(min-width: 480px)");
-        setCurrentCard(currentCard < 2 ? currentCard + 1 : 0);
+        setCurrentCard(currentCard < 2 ? currentCard + 1 : 2);
     };
 
     const prevCard = (r) => {

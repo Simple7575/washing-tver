@@ -16,7 +16,7 @@ export default function Cards({ body, currentCard }) {
             <strong>{body.strong}</strong>
             <p>{body.p1}</p>
             <p>{body.p2}</p>
-            <p>{body.p2}</p>
+            <p>{body.p3}</p>
             {body.b === "Связаться с нами" ? (
                 <button onClick={() => setPopupState(null)}>{body.b}</button>
             ) : (

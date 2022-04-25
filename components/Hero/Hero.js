@@ -42,14 +42,14 @@ export default function Hero() {
                             <PhoneSVG />
                             <span>+7 (952) 066 90 90</span>
                         </a>
-                        <a href="tel:+79106951512">
+                        <a href="tel:+79206951512">
                             <PhoneSVG />
-                            <span>+7 (910) 695 15 12</span>
+                            <span>+7 (920) 695 15 12</span>
                         </a>
-                        <button>
+                        {/* <button>
                             <ViberSCG />
                             <span>&nbsp; +7 (963) 219 35 36</span>
-                        </button>
+                        </button> */}
                     </div>
                     <div className={styles.header}>
                         <h1>Ремонт стиральных машин на дому в Твери</h1>

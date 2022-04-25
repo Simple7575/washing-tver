@@ -14,7 +14,7 @@ export default function Services() {
     const nextCard = (e) => {
         const query = window.matchMedia("(min-width: 480px)");
         if (!query.matches) {
-            setCurrentCard(currentCard < 4 ? currentCard + 1 : 0);
+            setCurrentCard(currentCard < 4 ? currentCard + 1 : 4);
         } else {
             if (translateSize > -1120) {
                 const cards =
@@ -48,6 +48,17 @@ export default function Services() {
             }
         }
     };
+
+    // useEffect(() => {
+    //     const cards = window.document.querySelectorAll("#card_container");
+    //     cards.forEach((card) => {
+    //         card.setAttribute(
+    //             "style",
+    //             `transform: translateX(${translateSize}px); transition: all 300ms;`
+    //         );
+    //     });
+    //     console.log("rerendered");
+    // }, []);
 
     return (
         <div id="services" className={styles.container}>
