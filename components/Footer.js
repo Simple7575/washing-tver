@@ -8,6 +8,8 @@ export default function Footer() {
         <div className={styles.container}>
             <div className={styles.inner_container}>
                 <div>
+                    <p>Манаков Александр Иосифович</p>
+                    <p>ИНН: 691507632531</p>
                     <p>SERVISTVER.RU</p>
                     <p>2022 &copy;</p>
                 </div>
@@ -17,7 +19,7 @@ export default function Footer() {
                     </a>
                     <a href="tel:+79520669090">
                         <PhoneSVG />
-                        <span>+7 7(952) 066 90 90 </span>
+                        <span>+7 (952) 066 90 90 </span>
                     </a>
                 </div>
             </div>
