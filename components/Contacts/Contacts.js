@@ -8,14 +8,10 @@ export default function Contacts() {
                 <div>
                     <ul>
                         <li>
-                            <a href="tel:+79520669090">
-                                Телефон: +7 952 066 90 90
-                            </a>
+                            <a href="tel:+79520669090">Телефон: +7 952 066 90 90</a>
                         </li>
                         <li>
-                            <a href="tel:+79206951512">
-                                Доп. т.: +7 920 695 15 12
-                            </a>
+                            <a href="tel:+79206951512">Доп. т.: +7 920 695 15 12</a>
                         </li>
                     </ul>
 
@@ -25,7 +21,7 @@ export default function Contacts() {
                     </p>
                     <p>
                         <strong>Обслуживаем:</strong> <br />
-                        Твер. Выезд в пригород.
+                        Тверь. Выезд в пригород.
                     </p>
                 </div>
                 <div className={styles.map_container}>

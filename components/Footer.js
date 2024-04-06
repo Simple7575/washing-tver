@@ -8,7 +8,7 @@ export default function Footer() {
         <div className={styles.container}>
             <div className={styles.inner_container}>
                 <div>
-                    <p className={styles.name}>Александр Иосифович</p>
+                    <p className={styles.name}>Александр Манаков Иосифович</p>
                     <p className={styles.inn}>ИНН: 691507632531</p>
                     <p>SERVISTVER.RU</p>
                     <p>2022 &copy;</p>
